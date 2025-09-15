@@ -1,8 +1,8 @@
 let txtarea = document.getElementById("inp_txt");
 let model_txt = document.getElementsByClassName("model_txt")[0];
 const theTimer = document.getElementById("lbl_type_speed");
+const btn_reset = document.getElementsByClassName("btn_reset")[0];
 let section_type = document.getElementsByClassName("section_type")[0];
-txtarea.addEventListener("change", change_txt());
 
 var timer = [0, 0, 0, 0];
 var timer_runing = false;
@@ -35,7 +35,7 @@ function start() {
   let txt_length = txtarea.value.length;
 
   if (!timer_runing) {
-   interval_timer= setInterval(func_timer, 10);
+    interval_timer = setInterval(func_timer, 10);
     timer_runing = true;
   }
 }
@@ -55,5 +55,16 @@ function spell_check() {
   }
 }
 
+function reset() {
+  timer = [0, 0, 0, 0];
+  timer_runing = false;
+  txtarea.value = "";
+  clearInterval(interval_timer);
+  interval_timer = null;
+  theTimer.innerText = "00:00:00";
+  section_type.style.outline = "none";
+}
+
 txtarea.addEventListener("keypress", start);
-txtarea.addEventListener('keyup',spell_check);
+txtarea.addEventListener("keyup", spell_check);
+btn_reset.addEventListener("click", reset);
