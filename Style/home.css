@@ -23,11 +23,13 @@ body{
 
 .section_type
 {
+    outline: 20px white;
     height: 70%;
     width: 90%;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    outline: transparent;
     background-color: rgb(105, 148, 181);
 }
 
@@ -42,15 +44,23 @@ body{
     background-color:rgb(136, 215, 255) ;
     border-radius: 10px 10px 0 0;
 }
-.inp_txt
+#inp_txt
 {
     resize: none;
     flex-shrink: 1;
     height: 100%;
-    border-style: none;
-    outline: none;
+    outline-style: none;
     padding: 20px;
     font-size: 27px;
     border-radius: 0 0 10px 10px;
     background-color:rgba(255, 255, 255, 0.245) ;
 }
+
+
+.section_show_speed{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 23px;
+}
+
